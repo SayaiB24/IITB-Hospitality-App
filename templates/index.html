@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitality App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Upload Group and Accommodation Details</h1>
+    <form action="{{ url_for('upload_files') }}" method="post" enctype="multipart/form-data">
+        <label for="group_file">Group CSV File:</label>
+        <input type="file" name="group_file" id="group_file" required>
+        <label for="hostel_file">Hostel CSV File:</label>
+        <input type="file" name="hostel_file" id="hostel_file" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if allocation %}
+    <h2>Room Allocation Results</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Group ID</th>
+                <th>Hostel Name</th>
+                <th>Room Number</th>
+                <th>Members Allocated</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in allocation %}
+            <tr>
+                <td>{{ item['Group ID'] }}</td>
+                <td>{{ item['Hostel Name'] }}</td>
+                <td>{{ item['Room Number'] }}</td>
+                <td>{{ item['Members Allocated'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+</html>
