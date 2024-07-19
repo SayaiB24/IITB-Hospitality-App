@@ -1,12 +1,12 @@
 Digitalization of the Hospitality Process for Group Accommodation
 
-Overview
+Overview:-
 This document provides a comprehensive overview of the web application designed
 to digitalize the hospitality process for group accommodation. The application 
 facilitates room allocation for groups in hostels, ensuring efficient and logical 
 placement based on group and hostel information provided through CSV files.
 
-Objective
+Objective:-
 The primary objective is to create a web application that allows users to upload
 CSV files containing group and hostel information and efficiently allocate rooms 
 while adhering to group, capacity, and gender-specific requirements.
